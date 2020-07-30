@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Quiz</title>
+    <!-- include style.css-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <a href="end.html">View Highscore</a>
+    </div>
+    <div class="intro-wrapper wrapper">
+      <div class="home_text">
+        <h3>Coding Quiz Challenge</h3>
+        <p>
+          Please answer the following code-related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your score
+          time by ten seconds!
+        </p>
+        <form class="home_form" name="home_form">
+          <input id="home_form" type="text" name="name" />
+          <button type="submit" onclick="submitForm(event)">Start Quiz</button>
+        </form>
+      </div>
+    </div>
+    <div class="quiz-wrapper wrapper hide">
+      <div class="quiz">
+        <div class="quiz_header">
+          <div class="quiz_user">
+            <h4>Welcome!</h4>
+          </div>
+          <div class="quiz_time">
+            <span class="time">Time:00:00</span>
+          </div>
+        </div>
+        <div class="quiz_body">
+          <div id="question">
+            <h2>Commonly used data types DO NOT include:</h2>
+            <ul class="option_group">
+              <li class="option">strings</li>
+              <li class="option">bootstraps</li>
+              <li class="option">numbers</li>
+              <li class="option">alerts</li>
+            </ul>
+            <button class="btn-next" onclick="nextForm()">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script.js-->
+    <script src="script.js"></script>
+  </body>
+</html>
