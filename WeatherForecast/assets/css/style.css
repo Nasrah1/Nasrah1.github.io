@@ -1,0 +1,41 @@
+body {
+  background-image: url("https://www.securityroundtable.org/wp-content/uploads/2018/07/AdobeStock_103287945.jpeg");
+}
+.remove {
+  display: none;
+}
+
+#weather1 {
+  margin: 0 auto;
+}
+
+#weather2 {
+  margin: 0 auto;
+}
+
+.day1 {
+  background-color: #27ccea;
+}
+
+.day2 {
+  background-color: #27ccea;
+}
+
+.day3 {
+  background-color: #27ccea;
+}
+
+.day4 {
+  background-color: #27ccea;
+}
+
+.day5 {
+  background-color: #27ccea;
+}
+
+#navTitle {
+  font-family: "Crimson Text", serif;
+  position: relative;
+  left: 300px;
+  font-size: 40px;
+}
