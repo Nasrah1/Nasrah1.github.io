@@ -1,0 +1,22 @@
+{
+    "name": "team-profile",
+    "version": "1.0.0",
+    "description": "Unit 10 homework",
+    "main": "app.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Nasrah1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "inquirer": "^7.3.3",
+        "jest": "^26.4.2",
+        "lib": "^4.3.0"
+    },
+    "devDependencies": {},
+    "keywords": []
+}

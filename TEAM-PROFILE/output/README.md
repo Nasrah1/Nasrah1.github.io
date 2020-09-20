@@ -1,0 +1,2 @@
+In This Team Generator Profile there is a Node application command line that requests information from the user about members of team and generates a team HTML file displaying all the information. When all the information on the team members has been entered, the user is asked if there are any more members they would like to add and so forth.
+npm and packages was installed to install all required dependencies for this project.
