@@ -54,6 +54,7 @@ const handleNoteSave = function() {
     const newNote = {
         title: $noteTitle.val(),
         text: $noteText.val(),
+        id: activeNote.id,
     };
 
     saveNote(newNote).then(() => {
@@ -64,11 +65,13 @@ const handleNoteSave = function() {
 
 // Delete the clicked note
 const handleNoteDelete = function(event) {
+    alert("here");
     // prevents the click listener for the list from being called when the button inside of it is clicked
     event.stopPropagation();
 
     const note = $(this).parent(".list-group-item").data();
 
+    console.log(note);
     if (activeNote.id === note.id) {
         activeNote = {};
     }

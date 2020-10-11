@@ -53,14 +53,15 @@ var writeNewNote = function(note) {
 app.post("/api/notes", function(req, res) {
     // Receives a new note, adds it to db.json, then returns the new note
     let newNote = req.body;
+    console.log(newnote);
+    alert("heretoo");
     notes.push(newNote);
-    updateDb();
     return console.log("Added new note: " + newNote.title);
 });
 
 app.delete("/api/notes/:id", function(req, res) {
-    notes.splice(req.params.id, 1);
-    updateDb();
+    console.log(req.params);
+    notes.pop(req.params.id, 1);
     console.log("Deleted note with id " + req.params.id);
 });
 
