@@ -1,12 +1,40 @@
-# Unit 14 Sequelize Homework: Reverse Engineering Code
+# Sequelize Reverse Engineering Code
 
-Reverse engineer the starter code provided and create a tutorial for the code.
+## Table of contents
 
-In the `Develop` folder, there is starter code for a project. Begin inspecting the code to get an understanding of each file's responsibility. Then, in a Google Doc, write a tutorial explaining *every* file and its purpose. If one file is dependant on other files, be sure to let the user know.
+- [Screenshots](#screenshots)
+- [Description](#description)
+- [Installation](#installation)
+- [Technologies Used](#technologies-used)
 
-At the end of the tutorial, add instructions for how you could now add changes to this project.
+## Description
 
-Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), we can frame this challenge as follows:
+This project is a walk through of a codebase that the user can use to create a new project with NPM, Node, Passport, Sequelize and MySQL
+
+## Installation
+
+1. Create a mysql db called “passport_demo” and git clone repo
+
+1. Go into the config file, delete config.json and replace it with config.js and insert your personal data ie username, password etc. Created .ENV file so it stores credentials in our private data environment.
+
+1. Open terminal in your current repo and run “npm i” to install all node packages
+
+1. While in terminal, run “node server.js” and you will successfully connect to server
+
+1. Lastly on terminal click on url “http://localhost:8080/’
+
+## Technologies Used
+
+- BCRYPTJS
+- DOTENV
+- EXPRESS
+- EXPRESS-SESSION
+- MYSQL2
+- PASSPORT
+- PASSPORT-LOCAL
+- SEQUELIZE
+
+
 
 ```
 AS A developer
@@ -16,26 +44,16 @@ I WANT a walk-through of the codebase
 SO THAT I can use it as a starting point for a new project
 ```
 
-## Business Context
+## Screenshots
 
-When joining a new team, you will be expected to inspect a lot of code that you have never seen before. Rather than having a team member explain every line for you, you will dissect the code by yourself, saving any questions for a member of your team.
+### Sign Up Form
 
-## Acceptance Criteria
+![Sign Up](develop/public/img/signup-form.PNG)
 
-```md
-GIVEN a Node.js application using Sequelize and Passport
-WHEN I follow the walkthrough
-THEN I understand the codebase
-```
-- - -
+### Login
 
-## Submission on BCS
+![Sign Up](develop/public/img/login-form.PNG)
 
-You are required to submit the following:
+### Dashboard
 
-* A link to a Google Doc or video explaining the application in `Develop/`. 
-
-_Note: Don't forget to change the sharing settings on your Google Doc._
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+![Sign Up](develop/public/img/signup-form.PNG)
