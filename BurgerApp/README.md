@@ -1,7 +1,31 @@
+# Burger App
+
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Technologies Used](#technologies-used)
+- [Demo](#demo)
+
+## Description
+
 In this assignment i created a BurgerApp that is a restaurant app that lets users input the names of burgers they’d like to eat
 
-I created a burger logger with MySQL, Node, Express, Handlebars, and ORM.
+## Installation
 
-I also deployed my app to Heroku for web hosting.
+To start the server, run npm server. To access the app after starting the server, go to http://localhost:3000 in your browser.
 
-I used Node and MySQL to query and route data, and I used Handlebars to generate HTML.
+## Technologies Used
+
+- Node.js
+- Express
+- Handlebars
+- MySQL
+- ORM
+
+## Demo
+
+Link: [BurgerApp](https://fierce-savannah-07607.herokuapp.com/)
+
+![BurgerApp](public/assets/img/Eat-Da-Burger!.gif)
+

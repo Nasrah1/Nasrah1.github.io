@@ -1,65 +1,82 @@
-var connection = require("../config/connection.js");
+const connection = require("../config/connection.js");
+
+function printQuestionMarks(num) {
+  let arr = [];
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
+  return arr.toString();
+}
+
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
-    var arr = [];
+  let arr = [];
 
-    // loop through the keys and push the key/value as a string int arr
-    for (var key in ob) {
-        var value = ob[key];
-        // check to skip hidden properties
-        if (Object.hasOwnProperty.call(ob, key)) {
-            // if string with spaces, add quotations (big mac => 'big mac')
-            if (typeof value === "string" && value.indexOf(" ") >= 0) {
-                value = "'" + value + "'";
-            }
-            arr.push(key + "=" + value);
-        }
+  for (var key in ob) {
+    const value = ob[key];
+    // check to skip hidden properties
+    if (Object.hasOwnProperty.call(ob, key)) {
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        value = "'" + value + "'";
+      }
+      arr.push(key + "=" + value);
     }
+  }
+  // translate array of strings to a single comma-separated string
+  return arr.toString();
 }
-var orm = {
-    selectAll: function(tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function(err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-    },
-    insertOne: function(table, cols, vals, cb) {
-        console.log(vals);
-        var queryString = "INSERT INTO " + table;
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES('";
-        queryString += vals.toString();
-        queryString += "') ";
 
-        console.log(queryString);
+// READ/SELECT all the records in the database
+const orm = {
+  all: function (tableInput, br) {
+    var queryString = 'SELECT * FROM ' + tableInput + ';';
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      br(result);
+    });
+  },
 
-        connection.query(queryString, vals, function(err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-    },
-    updateOne: function(table, id, cb) {
-        queryString =
-            "UPDATE Burgers set devoured= false where id =" + id.toString();
+  // CREATE/INSERT a new record to the database
+  create: function (table, cols, vals, br) {
+    var queryString = 'INSERT INTO ' + table;
+    queryString += ' (';
+    queryString += cols.toString();
+    queryString += ') ';
+    queryString += 'VALUES (';
+    queryString += printQuestionMarks(vals.length);
+    queryString += ') ';
 
-        console.log(queryString);
-        return false;
+    console.log(queryString);
 
-        connection.query(queryString, function(err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-    },
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      br(result);
+    });
+  },
+  // UPDATE/UPDATE a specific record in the database
+  update: function (table, objColVals, condition, br) {
+    var queryString = 'UPDATE ' + table;
+
+    queryString += ' SET ';
+    queryString += objToSql(objColVals);
+    queryString += ' WHERE ';
+    queryString += condition;
+
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      br(result);
+    });
+  }
+
 };
 
-// Export the orm object for the model (burger.js).
 module.exports = orm;
