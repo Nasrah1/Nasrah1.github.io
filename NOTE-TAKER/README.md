@@ -25,5 +25,8 @@ To access the application run node server.js and open broweser go to http://loca
 
 ## Demo
 
+Deployed: [Note-Taker](https://stormy-reef-22729.herokuapp.com/)
+
 ![Note-Taker](assets/img/Note-Taker.gif)
+
 
