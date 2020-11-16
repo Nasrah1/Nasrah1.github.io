@@ -25,7 +25,7 @@ To start the server, run npm server. To access the app after starting the server
 
 ## Demo
 
-Link: [BurgerApp](https://fierce-savannah-07607.herokuapp.com/)
+Deployed: [BurgerApp](https://stormy-journey-23402.herokuapp.com/)
 
 ![BurgerApp](public/assets/img/Eat-Da-Burger!.gif)
 
